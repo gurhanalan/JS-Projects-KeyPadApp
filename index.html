@@ -4,6 +4,14 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Font awesome -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+            integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+            crossorigin="anonymous"
+        />
+        <!-- CSS stylesheet -->
         <link rel="stylesheet" href="css/style.css" />
         <title>Document</title>
     </head>
@@ -62,15 +70,23 @@
                         />
                         <label
                             for="shift"
-                            class="keypad__keys__key keypad__keys__key--shift"
+                            class="
+                                keypad__keys__key--func keypad__keys__key--shift
+                            "
                         >
-                            Shift
+                            <i class="fas fa-arrow-up"></i>
                         </label>
-                        <div class="keypad__keys__key keypad__keys__key--space">
-                            Space
-                        </div>
-                        <div class="keypad__keys__key keypad__keys__key--del">
-                            Del
+                        <div
+                            class="
+                                keypad__keys__key--func keypad__keys__key--space
+                            "
+                        ></div>
+                        <div
+                            class="
+                                keypad__keys__key--func keypad__keys__key--del
+                            "
+                        >
+                            <i class="fas fa-arrow-left"></i>
                         </div>
 
                         <div class="keypad__keys__key">.</div>
