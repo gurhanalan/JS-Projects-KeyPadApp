@@ -11,21 +11,20 @@ const keys = document.querySelectorAll(".keypad__keys__key");
 const displayEl = document.querySelector(".keypad__display__text");
 
 // Variables
-let text = "asas";
+let text = "";
 let upper = false;
 
 // FUNCTIONS
 
 function display() {
     displayEl.value = text;
+    displayEl.focus();
 }
 
 display();
 
 // EVENT LISTENERS
 shiftKey.addEventListener("click", () => {
-    console.log("clicked");
-    console.log(shiftCheckbox.checked);
     if (!shiftCheckbox.checked) {
         keysBox.classList.add("keypad__keys--upper");
         upper = true;
@@ -36,12 +35,13 @@ shiftKey.addEventListener("click", () => {
 });
 
 keysBox.addEventListener("click", (e) => {
-    console.log(e.target);
     if (e.target.classList.contains("keypad__keys__key")) {
         let add = upper ? e.target.innerHTML.toUpperCase() : e.target.innerHTML;
         text = text + add;
-        // console.log(e.target.innerHTML);
-        // text = text + e.target.innerHTML;
-        display();
+    } else if (e.target.classList.contains("keypad__keys__key--space")) {
+        text = text + " ";
+    } else if (e.target.classList.contains("keypad__keys__key--del")) {
+        text = text.slice(0, -1);
     }
+    display();
 });
