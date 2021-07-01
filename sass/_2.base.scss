@@ -13,13 +13,12 @@ html {
     // @include respond(tab-land) {
     //    font-size: 56.25%; //1 rem = 9px; 9/16=
     // }
-    // @include respond(tab-port) {
-    //    font-size: 50%; //1 rem = 8px; 8/16=
-    // }
+    @include respond(phone) {
+        font-size: 50%; //1 rem = 8px; 8/16=
+    }
     // @include respond(big-desktop) {
     //    font-size: 75%; //1 rem = 12px; 12/16=
     // }
 }
-
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
