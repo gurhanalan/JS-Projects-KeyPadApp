@@ -42,3 +42,13 @@ keysBox.addEventListener("click", (e) => {
 
 // Change theme
 const themeCheckbox = document.querySelector(".keypad__theme__checkbox");
+const themeToggle = document.querySelector(".keypad__theme__toggle");
+const section = document.querySelector(".section-one");
+
+themeToggle.addEventListener("click", () => {
+    if (!themeCheckbox.checked) {
+        section.setAttribute("data-theme", "dark");
+    } else {
+        section.setAttribute("data-theme", "light");
+    }
+});
