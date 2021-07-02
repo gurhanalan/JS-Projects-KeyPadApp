@@ -16,8 +16,17 @@
         <title>Document</title>
     </head>
     <body>
-        <section class="section-one">
+        <section class="section-one" data-theme="light">
             <div class="keypad">
+                <div class="keypad__theme">
+                    <input
+                        type="checkbox"
+                        name=""
+                        id="theme"
+                        class="keypad__theme__checkbox"
+                    />
+                    <label for="theme" class="keypad__theme__toggle"></label>
+                </div>
                 <div class="keypad__display">
                     <textarea
                         name=""

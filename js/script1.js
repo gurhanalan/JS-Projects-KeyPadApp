@@ -39,3 +39,6 @@ keysBox.addEventListener("click", (e) => {
     }
     displayEl.focus();
 });
+
+// Change theme
+const themeCheckbox = document.querySelector(".keypad__theme__checkbox");
