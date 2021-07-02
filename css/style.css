@@ -1,0 +1,138 @@
+/* 
+0 - 600px    :     Phone
+600 - 900px  :    Tablet Portrait
+900 - 1200px :    Tablet Landscape
+1200 - 1800px:    Where this style applies
+1800px +     :    Big Desktop
+
+$breakpoint argument choices
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER : Base + typograpy > general layout + grid > page layout > componenets
+1em = 16px
+
+*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit; }
+
+html {
+  font-size: 62.5%; }
+  @media only screen and (max-width: 37.5em) {
+    html {
+      font-size: 50%; } }
+
+.section-one {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-image: linear-gradient(135deg, #81ffef 10%, #f067b4 100%); }
+
+.section-one[data-theme="light"] {
+  --color-1: #ebf5fc;
+  --color-2: #000508;
+  --color-3: #3180b1;
+  --box-shadow-1: -0.2rem -0.2rem 0.5rem rgba(255, 255, 255, 1),
+        0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
+  --box-shadow-2: inset -0.2rem -0.2rem 0.5rem rgba(255, 255, 255, 1),
+        inset 0.3rem 0.3rem 0.5rem rgba(0, 0, 0, 0.1); }
+
+.section-one[data-theme="dark"] {
+  --color-1: #131419;
+  --color-2: #c7c7c7;
+  --color-3: lawngreen;
+  --box-shadow-1: 2px 2px 5px rgba(0, 0, 0, 0.5),
+        -3px -3px 7px rgba(255, 255, 255, 0.05);
+  --box-shadow-2: inset 2px 2px 5px rgba(0, 0, 0, 0.5),
+        inset -3px -3px 7px rgba(255, 255, 255, 0.05); }
+
+.keypad {
+  background-color: var(--color-1);
+  padding: 2rem;
+  border-radius: 5rem;
+  box-shadow: var(--box-shadow-1); }
+  .keypad__theme {
+    padding: 0 2rem;
+    display: flex;
+    justify-content: flex-end; }
+    .keypad__theme__checkbox {
+      appearance: none; }
+    .keypad__theme__checkbox:checked ~ .keypad__theme__toggle::after {
+      left: 2rem; }
+    .keypad__theme__toggle {
+      cursor: pointer;
+      display: inline-block;
+      height: 2rem;
+      width: 4rem;
+      box-shadow: var(--box-shadow-2);
+      background-color: var(--color-1);
+      border-radius: 1rem;
+      position: relative; }
+      .keypad__theme__toggle::after {
+        content: "";
+        position: absolute;
+        height: 1rem;
+        width: 1rem;
+        box-shadow: var(--box-shadow-1);
+        background-color: var(--color-1);
+        border-radius: 50%;
+        top: 0.5rem;
+        left: 1rem; }
+  .keypad__display {
+    padding: 2rem; }
+    .keypad__display__text {
+      outline: none;
+      border: none;
+      padding: 1rem;
+      box-shadow: var(--box-shadow-2);
+      background-color: var(--color-1);
+      width: 100%;
+      resize: none;
+      font-size: 1.6rem;
+      color: var(--color-2);
+      letter-spacing: 1px; }
+  .keypad__keys {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem; }
+    .keypad__keys--upper {
+      text-transform: uppercase; }
+    .keypad__keys__row {
+      display: flex;
+      gap: 0.8rem;
+      justify-content: center; }
+    .keypad__keys__key, .keypad__keys__key--func {
+      height: 4rem;
+      width: 4rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.8rem;
+      color: var(--color-2);
+      box-shadow: var(--box-shadow-1);
+      cursor: pointer;
+      user-select: none; }
+      .keypad__keys__key:active, .keypad__keys__key--func:active {
+        box-shadow: var(--box-shadow-2);
+        color: var(--color-3); }
+    .keypad__keys__key--space {
+      width: 20rem; }
+    .keypad__keys__key--shift, .keypad__keys__key--del {
+      width: 6rem; }
+    .keypad__keys__key--shift-checkbox {
+      appearance: none; }
+    .keypad__keys__key--shift-checkbox:checked + .keypad__keys__key--shift {
+      box-shadow: var(--box-shadow-2);
+      color: var(--color-3); }
